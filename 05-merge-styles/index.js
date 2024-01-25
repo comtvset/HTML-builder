@@ -5,6 +5,8 @@ const style = path.join(__dirname, 'styles');
 fs.readdir(style, (error, files) => {
   if (error) console.log(`Error: ${error.message}\n`);
 
+  fs.writeFile(path.join(__dirname, './project-dist/bundle.css'), '', () => {});
+
   files.forEach((file) => {
     if (path.extname(file) == '.css') {
       fs.readFile(
